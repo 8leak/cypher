@@ -1,14 +1,14 @@
 extends Node2D
 
-onready var dialog_panel := find_node("DialogPanel")
 var current_conversation := Conversation.new()
 
+onready var dialog_panel := find_node("DialogPanel")
 
 func _ready() -> void:
 	current_conversation.connect("new_output", self, "_on_new_conversation_output")
 	current_conversation.connect("new_options", self, "_on_new_conversation_options")
 	dialog_panel.connect("option_button_pressed", self, "_on_dialog_panel_option_pressed")
-	current_conversation.start()
+	current_conversation.start('res://addons/clyde/dialogues/pulp_with_blocks.clyde')
 
 
 func _on_new_conversation_output(new_output: String) -> void:

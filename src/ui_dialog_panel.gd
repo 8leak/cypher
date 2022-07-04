@@ -2,7 +2,6 @@ extends VBoxContainer
 
 signal option_button_pressed(id)
 
-
 onready var output := get_node("Output")
 onready var _input_container := get_node("InputContainer")
 

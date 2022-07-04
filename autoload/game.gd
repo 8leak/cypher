@@ -27,6 +27,7 @@ func _init() -> void:
 	add_child(scenes)
 	add_child(console)
 	theme = load("res://resources/theme_main.tres")
+	logger.level = logger.LEVEL.DEBUG
 
 
 func _ready() -> void:
