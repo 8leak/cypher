@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://src/ui_dialog_panel.gd" type="Script" id=1]
+
+[node name="DialogPanel" type="VBoxContainer"]
+margin_left = 25.0
+margin_top = 25.0
+margin_right = 999.0
+margin_bottom = 575.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Output" type="RichTextLabel" parent="."]
+margin_right = 974.0
+margin_bottom = 546.0
+size_flags_vertical = 11
+text = "
+"
+fit_content_height = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InputContainer" type="VBoxContainer" parent="."]
+margin_top = 550.0
+margin_right = 974.0
+margin_bottom = 550.0
+size_flags_vertical = 9

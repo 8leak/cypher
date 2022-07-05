@@ -1,0 +1,22 @@
+-- Start Game
+-> intro
+
+== intro
+npc: what do you want to talk about?
+
+* Life
+  -> about_life
+* The universe
+  -> about_universe
+* Everything else...
+  -> about_everything_else
+
+== about_life
+npc: Well! That's too complicated...
+
+== about_universe
+npc: That's too complex!
+
+== about_everything_else
+npc: I don't have time for this...
+

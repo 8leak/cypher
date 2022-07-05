@@ -1,6 +1,6 @@
 # the root game manager class
 # holds references to a lot of utility classes
-extends ColorRect
+extends Control
 
 const MOD_PATH = "user://mods/"
 const LOAD_ORDER_FILE_PATH = "user://mods/loadorder.txt"
@@ -27,6 +27,7 @@ func _init() -> void:
 	add_child(scenes)
 	add_child(console)
 	theme = load("res://resources/theme_main.tres")
+	logger.level = logger.LEVEL.DEBUG
 
 
 func _ready() -> void:
