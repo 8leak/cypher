@@ -1,13 +1,16 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://scenes/ui_dialog_panel.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/menu_pause.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/level_main.gd" type="Script" id=3]
+[ext_resource path="res://scenes/ui_clock.tscn" type="PackedScene" id=4]
 
 [node name="MainLevel" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UIClock" parent="CanvasLayer" instance=ExtResource( 4 )]
 
 [node name="PauseMenu" parent="CanvasLayer" instance=ExtResource( 2 )]
 pause_mode = 2
@@ -27,8 +30,5 @@ custom_constants/margin_right = 25
 custom_constants/margin_top = 25
 custom_constants/margin_left = 25
 custom_constants/margin_bottom = 25
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="DialogPanel" parent="CanvasLayer/MarginContainer" instance=ExtResource( 1 )]

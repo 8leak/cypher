@@ -8,9 +8,6 @@ margin_top = 25.0
 margin_right = 999.0
 margin_bottom = 575.0
 script = ExtResource( 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Output" type="RichTextLabel" parent="."]
 margin_right = 974.0
@@ -18,7 +15,7 @@ margin_bottom = 546.0
 size_flags_vertical = 11
 text = "
 "
-fit_content_height = true
+scroll_following = true
 __meta__ = {
 "_edit_use_anchors_": false
 }

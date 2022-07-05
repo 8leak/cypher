@@ -10,3 +10,13 @@ static func pprint(reference: Reference) -> void:
 			print(JSON.print(reference, "  "))
 		_:
 			print(reference)
+
+
+# return a random element from an iterable
+# - choices, Iterable: the iterable to return a random element from
+# - returns Variant: a random element from the iterable
+static func choice(choices):
+	if choices.size() > 0:
+		return choices[Game.rng.randi_range(0, choices.size() - 1)]
+	Game.logger.error("Invalid choice object: %s" % str(choices))
+	return choices

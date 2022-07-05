@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "Node",
+"class": "Audio",
+"language": "GDScript",
+"path": "res://src/audio.gd"
+}, {
 "base": "Reference",
 "class": "ClydeDialogue",
 "language": "GDScript",
@@ -59,6 +64,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://src/ui_slider_label.gd"
 }, {
+"base": "Reference",
+"class": "Timeline",
+"language": "GDScript",
+"path": "res://src/timeline.gd"
+}, {
 "base": "Button",
 "class": "TransitionButton",
 "language": "GDScript",
@@ -75,6 +85,7 @@ _global_script_classes=[ {
 "path": "res://src/ui_version_label.gd"
 } ]
 _global_script_class_icons={
+"Audio": "",
 "ClydeDialogue": "",
 "Console": "",
 "Conversation": "",
@@ -85,6 +96,7 @@ _global_script_class_icons={
 "Scenes": "",
 "Settings": "",
 "SliderLabel": "",
+"Timeline": "",
 "TransitionButton": "",
 "Utils": "",
 "VersionLabel": ""

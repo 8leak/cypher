@@ -17,6 +17,14 @@ var logger := Logger.new()
 # settings singleton
 var settings := Settings.new()
 
+# timeline singleton
+var timeline := Timeline.new()
+
+# audio manager singleton
+var audio := Audio.new()
+
+var rng := RandomNumberGenerator.new()
+
 # tracks the pause state of the game
 var paused := false setget set_paused
 
@@ -26,6 +34,7 @@ func _init() -> void:
 	pause_mode = Node.PAUSE_MODE_PROCESS
 	add_child(scenes)
 	add_child(console)
+	add_child(audio)
 	theme = load("res://resources/theme_main.tres")
 	logger.level = logger.LEVEL.DEBUG
 

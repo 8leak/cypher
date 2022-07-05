@@ -98,4 +98,4 @@ func get_progress() -> float:
 
 # do something with the current progress
 func _update_progress() -> void:
-	Game.logger.info("Load progress: %s" % self.progress)
+	pass
