@@ -14,7 +14,8 @@ func start(dialog_file: String) -> void:
 	_get_next_dialogue_line()
 
 
-func select_option(id: int) -> void:
+func select_option(id: int, label: String) -> void:
+	emit_signal("new_output", label)
 	_dialogue.choose(id)
 	_get_next_dialogue_line()
 
@@ -33,7 +34,7 @@ func _get_next_dialogue_line():
 
 
 func _set_up_line(content):
-	emit_signal("new_output", content.text)
+	emit_signal("new_output", "%s: %s" % [content.speaker, content.text])
 	emit_signal("new_options", [])
 
 

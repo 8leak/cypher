@@ -9,7 +9,7 @@ signal event_triggered(name)
 
 # Folder where the interpreter should look for dialogue files
 # in case just the name is provided.
-var dialogue_folder = 'res://addons/clyde/dialogues/'
+var dialogue_folder = 'res://data/dialogues/'
 
 var _interpreter
 

@@ -1,6 +1,6 @@
 extends VBoxContainer
 
-signal option_button_pressed(id)
+signal option_button_pressed(id, label)
 
 onready var output := get_node("Output")
 onready var _input_container := get_node("InputContainer")
@@ -24,4 +24,4 @@ func clear_option_buttons() -> void:
 
 
 func _on_option_button_pressed(pressed_button: Button) -> void:
-	emit_signal("option_button_pressed", pressed_button.get_meta("option_id"))
+	emit_signal("option_button_pressed", pressed_button.get_meta("option_id"), pressed_button.text)
