@@ -17,8 +17,11 @@ var logger := Logger.new()
 # settings singleton
 var settings := Settings.new()
 
+# calendar singleton
+var calendar := Calendar.new()
+
 # timeline singleton
-var timeline := Timeline.new()
+var timeline := Timeline.new("res://data/timeline/timeline.yml")
 
 # audio manager singleton
 var audio := Audio.new()
@@ -37,6 +40,8 @@ func _init() -> void:
 	add_child(audio)
 	theme = load("res://resources/theme_main.tres")
 	logger.level = logger.LEVEL.DEBUG
+	
+	timeline.connect("new_event", self, "_on_timeline_new_event")
 
 
 func _ready() -> void:
@@ -46,6 +51,11 @@ func _ready() -> void:
 func _notification(what) -> void:
 	if what == MainLoop.NOTIFICATION_WM_QUIT_REQUEST:
 		quit()
+
+
+func _on_timeline_new_event(event_data) -> void:
+	for flag in event_data:
+		print("set ", flag, " to ", event_data[flag])
 
 
 # load a scene path instance and make it the current scene

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://data/sprites/clock_face.jpg" type="Texture" id=1]
-[ext_resource path="res://scenes/ui_clock.gd" type="Script" id=2]
+[ext_resource path="res://src/ui_clock.gd" type="Script" id=2]
 
 [sub_resource type="CanvasItemMaterial" id=1]
 blend_mode = 3

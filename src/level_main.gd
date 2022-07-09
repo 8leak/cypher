@@ -14,9 +14,9 @@ func _ready() -> void:
 	current_conversation.connect("new_options", self, "_on_new_conversation_options")
 	dialog_panel.connect("option_button_pressed", self, "_on_dialog_panel_option_pressed")
 
-	Game.timeline.connect("new_tick", self, "_on_timeline_new_tick")
-	Game.timeline.connect("new_hour", self, "_on_timeline_new_hour")
-	Game.timeline.connect("new_day", self, "_on_timeline_new_day")
+	Game.calendar.connect("new_tick", self, "_on_timeline_new_tick")
+	Game.calendar.connect("new_hour", self, "_on_timeline_new_hour")
+	Game.calendar.connect("new_day", self, "_on_timeline_new_day")
 
 	current_conversation.start('start_game')
 
@@ -39,8 +39,12 @@ func _on_timeline_new_tick(_ticks) -> void:
 	var stream = Utils.choice(current_ticks)
 	current_ticks = ticks_a if current_ticks == ticks_b else ticks_b
 	Game.audio.one_shot(stream)
-	var time = Game.timeline.get_date()
+	var time = Game.calendar.get_date()
 	$CanvasLayer/UIClock.set_time(time["hour"], time["minute"], time["second"])
+
+	var time_key = "%s-%02d:%02d:%02d" % [time["day"], time["hour"], time["minute"], time["second"]]
+	
+	Game.timeline.check_events(time_key)
 
 func _on_timeline_new_hour(_hour) -> void:
 	Game.audio.one_shot("res://data/audio/clock/hour_01.wav")

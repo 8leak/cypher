@@ -15,7 +15,7 @@ func start(dialog_file: String) -> void:
 
 
 func select_option(id: int, label: String) -> void:
-	Game.timeline.tick()
+	Game.calendar.tick()
 	emit_signal("new_output", label)
 	_dialogue.choose(id)
 	_get_next_dialogue_line()
